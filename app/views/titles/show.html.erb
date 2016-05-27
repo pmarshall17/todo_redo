@@ -1,0 +1,14 @@
+<h1><%= @title.name%> Info:</h1>
+<hr />
+
+<h3>
+	This book was written by: <%= @title.author %>
+</h3>
+
+<h3>
+The genre is: <%= @title.genre %>
+</h3>
+
+<%= link_to 'All_titles', title_path %>
+<%= link_to 'Edit', edit_title_path %>
+<%= link_to 'Delete', title_path, method: :delete %>

@@ -1,0 +1,22 @@
+<h1>Your Reading List</h1>
+<hr/>
+
+<!--what does the user see if ther are no schools?-->
+<!--what does the user see if there are schools?-->
+<!--add a link or a button to create  anew school-->	
+
+<% if @titles.any? %>
+	<!--loop the schools and diplay links to each one-->
+	<ul>
+		<% @titles.each do |title|%>
+		  <li>
+		    <%=link_to title.name, title_path(title)%>
+		    <!-- <a href='/school/:id'>Neumont</a> is what the above link is doing-->
+		  </li>
+    <%end%>
+  </ul>
+<% else %>
+  <h3>No book titles found. Please create one!</h3>
+<%end%>
+
+<%=link_to 'New Title', new_title_path %>
